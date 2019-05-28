@@ -1,10 +1,25 @@
-import React from 'react'
-import Layout from '../components/Layout';
+import React from "react"
+import Layout from "../components/Layout"
+import { graphql } from "gatsby"
 
-export default function blogTemp() {
-    return (
-        <Layout>
-            This is the blog template
-        </Layout>
-    )
+export const query = graphql`
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        date
+      }
+      html
+    }
+  }
+`
+
+export default function blogTemp({ data }) {
+  return (
+    <Layout>
+      <h1>{data.markdownRemark.frontmatter.title}</h1>
+      <p>{data.markdownRemark.frontmatter.date}</p>
+      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+    </Layout>
+  )
 }
