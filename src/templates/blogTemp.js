@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
+import Head from '../components/Head'
 import { graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
@@ -39,6 +40,7 @@ export default function blogTemp({ data }) {
 
   return (
     <Layout>
+      <Head title={`${data.contentfulBlogPost.title}`} />
       <h1> {data.contentfulBlogPost.title} </h1>
       <p> {data.contentfulBlogPost.publishedDate} </p>
       {documentToReactComponents(data.contentfulBlogPost.body.json, options)}
