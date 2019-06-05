@@ -11,6 +11,8 @@ module.exports = {
     author: "Luiz Carneiro"
   },
   plugins: [
+    'gatsby-plugin-tslint',
+    'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',
