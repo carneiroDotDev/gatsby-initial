@@ -1,11 +1,11 @@
+import { graphql, Link, useStaticQuery } from "gatsby"
 import React from "react"
-import Layout from "../components/Layout"
-import { useStaticQuery, graphql, Link } from "gatsby"
 import blogStyles from "../../styles/pagesStyle/blogStyles.module.scss"
 import Head from "../components/Head"
+import Layout from "../components/Layout"
 
 export default function blog(): JSX.Element {
-  const content: string = useStaticQuery(graphql`
+  const content: any = useStaticQuery(graphql`
     query {
       allContentfulBlogPost(sort: { fields: publishedDate, order: ASC }) {
         edges {
@@ -19,10 +19,10 @@ export default function blog(): JSX.Element {
     }
   `)
 
-  const fetchPosts = (data: string): JSX.Element => {
+  const fetchPosts = (data: any): JSX.Element => {
     return (
       <ol className={blogStyles.posts}>
-        {data.allContentfulBlogPost.edges.map(post => (
+        {data.allContentfulBlogPost.edges.map((post: any) => (
           <li className={blogStyles.post} key={post.node.slug}>
             <Link to={`/blog/${post.node.slug}`} id={`${post.node.slug}`}>
               <h2>{post.node.title}</h2>

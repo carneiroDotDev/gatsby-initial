@@ -6,7 +6,8 @@
             "options": [120]
         },
         "prettier": true,
-        "jsx-no-multiline-js": true,
+        "jsx-no-multiline-js": false,
+        "jsx-wrap-multiline": true,
         "jsx-no-lambda": false,
         "import-name": false,
         "no-boolean-literal-compare": false,
