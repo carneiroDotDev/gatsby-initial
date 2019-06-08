@@ -4,6 +4,10 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+console.log(process.env.CONTENTFUL_SPACE_ID)
+console.log(process.env.CONTENTFUL_ACCESS_TOKEN)
+console.log(process.env.NODE_ENV)
+
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -39,8 +43,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: "44zna8yximxp",
-        accessToken: "Ppx6kcjfhd0sr4-naf-x8HsZyubZMCLoNAKEB6Tq5vk"
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
       }
     },
   ]
