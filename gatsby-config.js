@@ -4,10 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-console.log(process.env.CONTENTFUL_SPACE_ID)
-console.log(process.env.CONTENTFUL_ACCESS_TOKEN)
-console.log(process.env.NODE_ENV)
-
 module.exports = {
   /* Your site config here */
   siteMetadata: {
